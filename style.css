@@ -20,13 +20,20 @@ body {
   color: var(--text-color);
   font-family: var(--font);
   font-size: 32px;
+  transition: 1.5s;
 }
 
 h1 {
   padding: 1rem;
   margin-top: 3rem;
   text-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.5);
+  cursor: pointer;
   user-select: none;
+  transition: 0.2s;
+}
+
+h1:hover {
+  transform: scale(1.1);
 }
 
 #form {

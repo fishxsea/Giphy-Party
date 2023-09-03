@@ -1,16 +1,18 @@
-console.log("Let's get this party started!");
-
 const addBtn = document.querySelector("#add-gif");
 const clearBtn = document.querySelector("#clear-gifs");
+const title = document.querySelector("h1");
+
 class giphy {
   constructor(api, apiKey) {
+    this.body = document.querySelector("body");
     this.gifCollection = document.querySelector("#gifs");
     this.input = document.querySelector("#gif-input");
+    this.gif = document.querySelector(".gif");
     this.api = api;
     this.apiKey = apiKey;
 
     // private method for random gif choice
-    this.randomChoice = (results) => {
+    this.randomChoice = function (results) {
       return Math.floor(Math.random() * results.length);
     };
   }
@@ -28,11 +30,37 @@ class giphy {
     gif.classList.add("gif");
 
     gif.src = returnedGifs[this.randomChoice(returnedGifs)].images.original.url;
-    console.log(gif);
     this.gifCollection.prepend(gif);
   }
+
   clearGifs() {
     this.gifCollection.innerHTML = "";
+  }
+
+  // adds colorchanging background
+  party() {
+    const colors = [
+      "red",
+      "blue",
+      "yellow",
+      "purple",
+      "green",
+      "teal",
+      "black",
+      "orange",
+    ];
+
+    let interval = setInterval(() => {
+      const color = colors[this.randomChoice(colors)];
+      this.body.style.backgroundImage = `none`;
+      this.body.style.backgroundColor = color;
+    }, 250);
+
+    setTimeout(() => {
+      this.body.style.backgroundImage =
+        "linear-gradient(var(--background-color2), var(--background-color)";
+      clearInterval(interval);
+    }, 10000);
   }
 }
 
@@ -49,4 +77,10 @@ addBtn.addEventListener("click", function (e) {
 clearBtn.addEventListener("click", function (e) {
   e.preventDefault();
   app.clearGifs();
+});
+
+title.addEventListener("click", function () {
+  if (app.input.value === "party") {
+    app.party();
+  }
 });
