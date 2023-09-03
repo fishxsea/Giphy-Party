@@ -1,0 +1,91 @@
+:root {
+  --background-color: #eb6841;
+  --background-color2: #e23862;
+  --font: "Signika Negative", sans-serif;
+  --text-color: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.5);
+  --gif-size: 250px;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: linear-gradient(
+    var(--background-color2),
+    var(--background-color)
+  );
+  color: var(--text-color);
+  font-family: var(--font);
+  font-size: 32px;
+}
+
+h1 {
+  padding: 1rem;
+  margin-top: 3rem;
+  text-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.5);
+  user-select: none;
+}
+
+#form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 4rem;
+  padding: 0;
+}
+
+#gif-input {
+  color: #000000;
+  font-family: inherit;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+  box-shadow: 0 0 0.5rem var(--shadow);
+  font-size: 18px;
+  background-color: transparent;
+  transition: 0.2s;
+}
+
+#gif-input:focus {
+  outline: none;
+  box-shadow: 0 0 0.8rem var(--shadow);
+}
+
+#gif-input::placeholder {
+  color: #0000007e;
+}
+
+button {
+  width: 100px;
+  font-family: inherit;
+  color: #0000007e;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+  background-color: rgba(23, 23, 23, 0);
+  font-size: 18px;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  transition: 0.2s;
+}
+
+button:hover {
+  color: #000000;
+  box-shadow: 0 0 0.8rem var(--shadow);
+}
+
+#gifs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gif {
+  margin: 1rem;
+  border-radius: 10%;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 1);
+  height: var(--gif-size);
+  width: var(--gif-size);
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Giphy Party!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Giphy Party</h1>
+    </header>
+
+    <main>
+      <div id="form">
+        <form action="">
+          <input type="text" id="gif-input" placeholder="search gif..." />
+          <button id="add-gif">submit</button>
+          <button id="clear-gifs">clear</button>
+        </form>
+      </div>
+      <!-- gifs append here -->
+      <div id="gifs"></div>
+    </main>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
